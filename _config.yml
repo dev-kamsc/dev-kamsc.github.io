@@ -11,7 +11,7 @@ subtitle: by KAMSC
 email: kamsc.h0m3@icloud.com
 description: Kalamazoo Area Mathematics and Science Center's <br /> new responsive site.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://kamsc.github.io" # the base hostname & protocol for your site
+url: "https://dev-kamsc.github.io" # the base hostname & protocol for your site
 blog_url: "https://kamsc.github.io/blog/"
 author: KAMSC Students
 street_address: 600 West Vine Street Suite 400
@@ -70,3 +70,5 @@ assets:
     - "*.jpg"
     - "*.jpeg"
   digest: true
+=======
+host: 0.0.0.0
