@@ -70,5 +70,4 @@ assets:
     - "*.jpg"
     - "*.jpeg"
   digest: true
-=======
 host: 0.0.0.0
