@@ -29,16 +29,53 @@
 </footer>
 
 </section>
-
 <!-- Scripts -->
 <script src="{{ site.url }}{{ site.baseurl }}/assets/js/jquery.min.js"></script>
 <script src="{{ site.url }}{{ site.baseurl }}/assets/js/jquery.dropotron.min.js"></script>
 <script src="{{ site.url }}{{ site.baseurl }}/assets/js/jquery.scrollgress.min.js"></script>
 <script src="{{ site.url }}{{ site.baseurl }}/assets/js/skel.min.js"></script>
 <script src="{{ site.url }}{{ site.baseurl }}/assets/js/util.js"></script>
+<script src="{{ site.url }}{{ site.baseurl }}/assets/js/modernizr.js"></script>
+<script src="{{ site.url }}{{ site.baseurl }}/assets/js/iziToast.min.js"></script>
+<script src="{{ site.url }}{{ site.baseurl }}/assets/js/jquery.mousewheel.min.js"></script>
+<script src="{{ site.url }}{{ site.baseurl }}/assets/js/lightgallery.min.js"></script>
+<script src="{{ site.url }}{{ site.baseurl }}/assets/js/lightgallery-all.min.js"></script>
 <!--[if lte IE 8]><script src="{{ site.url }}{{ site.baseurl }}/assets/js/ie/respond.min.js"></script><![endif]-->
 <script src="{{ site.url }}{{ site.baseurl }}/assets/js/main.js"></script>
 <script>$('body').scrollgress();</script>
+<script>
+jQuery(document).ready(function(){
+	var accordionsMenu = $('.cd-accordion-menu');
 
+	if( accordionsMenu.length > 0 ) {
+
+		accordionsMenu.each(function(){
+			var accordion = $(this);
+			//detect change in the input[type="checkbox"] value
+			accordion.on('change', 'input[type="checkbox"]', function(){
+				var checkbox = $(this);
+				//console.log(checkbox.prop('checked'));
+				( checkbox.prop('checked') ) ? checkbox.siblings('ul').attr('style', 'display:none;').slideDown(300) : checkbox.siblings('ul').attr('style', 'display:block;').slideUp(300);
+			});
+		});
+	}
+});
+</script>
+<script>
+$(document).ready(function () { setTimeout(function(){
+iziToast.show({
+    theme: 'light',
+    icon: 'fa fa-info-circle',
+    title: 'NOTE',
+    message: "Welcome to KAMSC's new website! Please note that this site is still in development. In case you come across any issues on the website, please let us know at: <a href='mailto:kamsc.h0m3@icloud.com'>kamsc.h0m3@icloud.com</a>. Happy Browsing!",
+    position: 'bottomRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter
+    progressBarColor: 'rgb(255, 103, 5)',
+	timeout: 20000,
+	transitionIn: 'bounceInUp'
+});
+}, 5000);});
+</script>
+</div>
+{% include sidebar-nav.html %}
 </body>
 </html>
